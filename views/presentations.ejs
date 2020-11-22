@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>
+      Presentation Submitted
+    </title>
+    <link href="/fileupload/css/font-demo.css" rel="stylesheet" />
+
+    <link type="text/css" href="/fileupload/css/impress-demo.css" rel="stylesheet" />
+
+    <link rel="shortcut icon" href="favicon.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  </head>
+
+  <body class="impress-not-supported">
+
+    <div class="fallback-message">
+      <p>
+        Your browser <b>doesn't support the features required</b> by impress.js,
+        so you are presented with a simplified version of this presentation.
+      </p>
+      <p>
+        For the best experience please use the latest <b>Chrome</b>,
+        <b>Safari</b> or <b>Firefox</b> browser.
+      </p>
+    </div>
+
+
+    <div id="impress">
+
+      <div id="bored" class="step slide" data-x="-1000" data-y="-1500">
+        <q>Your Prsentation has been Uploaded. Please click on "View Presentation" to View </q>
+      </div>
+
+      <div class="hint">
+        <p>Use a spacebar or arrow keys to navigate</p>
+      </div>
+      <script>
+        if ("ontouchstart" in document.documentElement) {
+          document.querySelector(".hint").innerHTML =
+            "<p>Tap on the left or right to navigate</p>";
+        }
+      </script>
+
+      <script src="/fileupload/js/jquery-1.7.1.min.js"></script>
+      <script src="/fileupload/js/jquery.signalR-1.0.0.js"></script>
+      <script src="/fileupload/js/jquery.signalRamp.js"></script>
+      <script src="/fileupload/js/jquery.impressR.js"></script>
+      <script src="/fileupload/js/impress.js"></script>
+
+      <script>
+        $("#impress").impressR({
+          proxyName: "myImpressDemo",
+        });
+      </script>
+  </body>
+
+</html>

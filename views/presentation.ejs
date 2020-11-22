@@ -1,0 +1,89 @@
+<html>
+  <head>
+    <title>Upload Presentation</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <!-- <link rel="stylesheet" src="/css/index.css" /> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class=" uploadPresentation">
+        
+        <div class="upload-form">
+          <h2 class="heading-first">Upload Presentation:</h2>
+          <form
+            class="presentationForm"
+            ref="uploadForm"
+            id="uploadForm"
+            action="/fileupload/"
+            method="POST"
+            enctype="multipart/form-data"
+          >
+            <div class="form-group">
+              <input class="form-control" type="file" name="sampleFile" />
+            </div>
+            <div class="form-group">
+              <input
+                class="form-control"
+                type="hidden"
+                id="username"
+                name="username"
+              />
+            </div>
+            <div class="form-group">
+              <input
+                class="btn btn-primary btn-block"
+                type="submit"
+                value="Upload!" id="upload"
+              />
+            </div>
+          </form>
+        </div>
+        
+      </div>
+    </div>
+    <script>
+      var url_string = window.location.href;
+      var url = new URL(url_string);
+      var username = url.searchParams.get("username");
+      console.log(username);
+      document.getElementById("username").value = username;
+    </script>
+  </body>
+  <style>
+    body {
+      background-color: #474747;
+    }
+
+    .uploadPresentation {
+      padding-top: 150px;
+      padding-left: 355px;
+    }
+
+    .upload-form {
+      width: 400px;
+      border: #474747;
+      background-color: #253858;
+      height: 170px;
+    }
+    .heading-first {
+      text-align: center;
+      color: white;
+      font-family: Archia;
+      font-weight: 400;
+      padding-top: 17px;
+    }
+    h2 {
+     font-size: 1.66667em;
+    }
+    .presentationForm {
+      margin: 20px;
+    }
+  </style>
+</html>
