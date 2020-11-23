@@ -1,0 +1,73 @@
+location ^~ /fileupload/ {
+
+    proxy_pass http://centos-om.pune.cdac.in:3002/;
+
+    rewrite /fileupload(/.*)$ /fileupload/$1 break;
+
+    }
+
+ 
+
+    location ^~ /presentation/ {
+
+    proxy_pass http://centos-om.pune.cdac.in/;
+
+    rewrite /presentation(/.*)$ /presentation/$1 break;
+    }
+
+
+location ^~ /signalr/ {
+
+    proxy_set_header Connection "";
+
+    proxy_http_version 1.1;
+
+    proxy_buffering off;
+
+    proxy_cache off;
+
+    chunked_transfer_encoding off;
+
+    proxy_pass http://signalgrr.apphb.com/;
+
+    rewrite (/.*)$ $1 break;
+
+   }
+
+
+location ^~ /signalrr/ {
+
+    proxy_set_header Connection "";
+
+    proxy_http_version 1.1;
+
+    proxy_buffering off;
+
+    proxy_cache off;
+
+    chunked_transfer_encoding off;
+
+    proxy_pass http://signalgrr.apphb.com/;
+
+    rewrite /signalrr(/.*)$ $1 break;
+
+}
+
+
+location ^~ /vcpptcode/ {
+
+    proxy_set_header Connection "";
+
+    proxy_http_version 1.1;
+
+    proxy_buffering off;
+
+    proxy_cache off;
+
+    chunked_transfer_encoding off;
+
+    proxy_pass http://localhost/vcpptcode;
+
+    rewrite /vcpptcode(/.*)$ /vcpptcode/$1 break;
+}
+
